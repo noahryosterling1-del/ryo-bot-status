@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>Bot Shard Status</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <div class="eyebrow"><span class="pulse"></span> SYSTEM STATUS</div>
+      <h1>Bot Shard Status</h1>
+      <p class="subtitle">Live connections · cluster overview · server shard lookup</p>
+      <div class="meta"><span id="overall" class="pill neutral">Waiting for data</span><span id="last-update">Last update: —</span></div>
+    </header>
+
+    <section class="stats" aria-label="Shard summary">
+      <article class="stat"><span>Total shards</span><strong id="total">—</strong></article>
+      <article class="stat"><span>Connected</span><strong id="connected">—</strong></article>
+      <article class="stat"><span>Issues</span><strong id="issues">—</strong></article>
+      <article class="stat"><span>Guilds reported</span><strong id="guilds">—</strong></article>
+    </section>
+
+    <section class="panel lookup">
+      <div><h2>Find a server's shard</h2><p>Paste a Discord server ID to calculate its shard number.</p></div>
+      <form id="lookup-form"><label class="sr-only" for="guild-id">Discord server ID</label><input id="guild-id" inputmode="numeric" autocomplete="off" placeholder="Enter server ID…" maxlength="25"><button type="submit">Find shard</button></form>
+      <p id="lookup-result" class="lookup-result" aria-live="polite"></p>
+    </section>
+
+    <section class="panel">
+      <div class="section-head"><div><h2>Shard connections</h2><p>Grouped by cluster · refreshes automatically</p></div><span class="small" id="refresh-label">Refreshing every 5s</span></div>
+      <div class="legend">
+        <span><i class="dot ok"></i> OK</span><span><i class="dot logging_in"></i> Logging in</span><span><i class="dot reconnecting"></i> Reconnecting</span><span><i class="dot dead"></i> Dead</span><span><i class="dot disconnected"></i> Disconnected</span><span><i class="dot unknown"></i> Unknown</span>
+      </div>
+      <div id="clusters" class="clusters"><div class="empty">Waiting for the bot to report its shard statuses…</div></div>
+      <div id="notice" class="notice" role="status"></div>
+    </section>
+    <footer>Built for Discord.js v14 · Keep bot tokens and API secrets private.</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

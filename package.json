@@ -1,9 +1,13 @@
 {
-  "name": "shard-status-vercel",
+  "name": "discord-shard-reporter-example",
   "version": "1.0.0",
   "private": true,
-  "description": "Vercel Discord shard status dashboard",
-  "engines": {
-    "node": ">=18"
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.19.3",
+    "dotenv": "^16.4.7"
   }
 }
