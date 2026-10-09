@@ -1,0 +1,9 @@
+{
+  "name": "shard-status-vercel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vercel Discord shard status dashboard",
+  "engines": {
+    "node": ">=18"
+  }
+}
